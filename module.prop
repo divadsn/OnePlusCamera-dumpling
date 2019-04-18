@@ -1,6 +1,6 @@
-id=template
-name=Template Module
-version=v1
-versionCode=1
-author=topjohnwu
-description=A short description
+id=OnePlusCamera
+name=OnePlus 5T Stock Camera
+version=v3.0.32-dumpling
+versionCode=3032
+author=David Sn (@divadsn)
+description=Stock OnePlus Camera with all functionality for any custom ROM on OnePlus 5T (dumpling), systemlessly.

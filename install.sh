@@ -51,6 +51,8 @@ REPLACE_EXAMPLE="
 
 # Construct your own list here
 REPLACE="
+/system/app/SnapdragonCamera2
+/system/priv-app/Snap
 "
 
 ##########################################################################################
@@ -123,7 +125,7 @@ REPLACE="
 
 print_modname() {
   ui_print "*******************************"
-  ui_print "     Magisk Module Template    "
+  ui_print " OnePlus Camera for OnePlus 5T "
   ui_print "*******************************"
 }
 
@@ -144,11 +146,14 @@ set_permissions() {
   # The following is the default rule, DO NOT remove
   set_perm_recursive $MODPATH 0 0 0755 0644
 
-  # Here are some examples:
-  # set_perm_recursive  $MODPATH/system/lib       0     0       0755      0644
-  # set_perm  $MODPATH/system/bin/app_process32   0     2000    0755      u:object_r:zygote_exec:s0
-  # set_perm  $MODPATH/system/bin/dex2oat         0     2000    0755      u:object_r:dex2oat_exec:s0
-  # set_perm  $MODPATH/system/lib/libart.so       0     0       0644
+  # Library files
+  set_perm_recursive  $MODPATH/system/lib 0 0 0755 0644
+  set_perm_recursive  $MODPATH/system/lib64 0 0 0755 0644
+  
+  # Prebuilt apks
+  set_perm $MODPATH/system/priv-app/OnePlusCamera/OnePlusCamera.apk 0 0 0644
+  set_perm $MODPATH/system/priv-app/OnePlusCameraService/OnePlusCameraService.apk 0 0 0644
+  set_perm $MODPATH/system/priv-app/OnePlusGallery/OnePlusGallery.apk 0 0 0644
 }
 
 # You can add more functions to assist your custom script code
